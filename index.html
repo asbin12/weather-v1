@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/5eafff2e57.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <h1 class="heading">Weather App</h1>
+        <div class="weather__card">
+          <form class="search">
+            <input id="searchPlace" placeholder="Enter your place name" />
+            <button onclick="showWeather(event)" class="btn">
+              <ion-icon name="search-outline"></ion-icon>
+            </button>
+          </form>
+          <div class="weather">
+            <div class="cityName__temp">
+              <img src="assets/img/sun1.jpg" alt="" />
+              <p class="showTemperature">40 °C</p>
+              <p class="weatherCity">Kathmandu</p>
+            </div>
+            <div class="details">
+              <div class="col">
+                <i class="fa-solid fa-droplet"></i>
+                <div class="humidity--text">
+                  <p class="humidity">40%</p>
+                  <p>Humidity</p>
+                </div>
+              </div>
+              <div class="col">
+                <i class="fa-solid fa-wind"></i>
+                <div>
+                  <p class="windSpeed">15 km/h</p>
+                  <p>Wind Speed</p>
+                </div>
+              </div>
+            </div>
+            <div class="sunRise__Sunset">
+              <div class="sunriseTime">
+                <p class="SunRiseTimeCal">6:00 AM</p>
+                <p>Sunrise</p>
+              </div>
+              <div>
+                <p class="SunsetTimeCal">6:00 PM</p>
+                <p>Sunset</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="wrapper__content">
+          <div>
+            <form>
+              <input id="searchPlace" placeholder="Enter your place name" />
+              <button onclick="showWeather(event)" class="btn">
+                <ion-icon name="search-outline"></ion-icon>
+              </button>
+            </form>
+            <div>
+              <figure>
+                <img src="assets/img/sun1.jpg" alt="" />
+                <p class="showTemperature"></p>
+              </figure>
+            </div>
+          </div>
+          <div class="showTemp">
+            <div class="details">
+              <div class="col">
+                <i class="fa-solid fa-droplet"></i>
+                <div class="humidity--text">
+                  <p class="humidity">40%</p>
+                  <p>Humidity</p>
+                </div>
+              </div>
+              <div class="col">
+                 <i class="fa-light fa-wind"></i> 
+                <i class="fa-solid fa-wind"></i>
+                <div>
+                  <p class="windSpeed">15 km/h</p>
+                  <p>Wind Speed</p>
+                </div>
+              </div>
+            </div>
+            <div class="sunRise__Sunset">
+              <div class="sunriseTime">
+                <p class="SunRiseTimeCal">6:00 AM</p>
+                <p>Sunrise</p>
+              </div>
+              <div>
+                <p class="SunsetTimeCal">6:00 PM</p>
+                <p>Sunset</p>
+              </div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </section>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
