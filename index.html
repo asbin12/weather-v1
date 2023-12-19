@@ -22,43 +22,51 @@
     <section>
       <div class="container">
         <h1 class="heading">Weather App</h1>
+        <p class="timeShower">Time</p>
+        <form class="search">
+          <input id="searchPlace" placeholder="Enter your place name" />
+          <button onclick="showWeather(event)" class="btn">
+            <ion-icon name="search-outline"></ion-icon>
+          </button>
+        </form>
         <div class="weather__card">
-          <form class="search">
-            <input id="searchPlace" placeholder="Enter your place name" />
-            <button onclick="showWeather(event)" class="btn">
-              <ion-icon name="search-outline"></ion-icon>
-            </button>
-          </form>
           <div class="weather">
-            <div class="cityName__temp">
-              <img src="assets/img/sun1.jpg" alt="" />
-              <p class="showTemperature">40 °C</p>
-              <p class="weatherCity">Kathmandu</p>
+            <p class="weatherCity"></p>
+            <div class="temp__feels-like">
+              <p class="showTemperature"></p>
+              <p class="feelsLike__details">
+                <span class="feelsLike"></span>
+                <span>Feels</span>
+              </p>
             </div>
+
+            <!-- <div class="cityName__temp">
+              <img src="assets/img/sun1.png" alt="" />
+            </div> -->
             <div class="details">
               <div class="col">
                 <i class="fa-solid fa-droplet"></i>
                 <div class="humidity--text">
-                  <p class="humidity">40%</p>
+                  <p class="humidity"></p>
                   <p>Humidity</p>
                 </div>
               </div>
               <div class="col">
                 <i class="fa-solid fa-wind"></i>
-                <div>
-                  <p class="windSpeed">15 km/h</p>
+                <div class="humidity--text">
+                  <p class="windSpeed"></p>
                   <p>Wind Speed</p>
                 </div>
               </div>
             </div>
             <div class="sunRise__Sunset">
-              <div class="sunriseTime">
-                <p class="SunRiseTimeCal">6:00 AM</p>
-                <p>Sunrise</p>
+              <div class="sunriseSunsetTime">
+                <p class="SunRiseTimeCal"></p>
+                <img src="assets/img/sunrise.png" alt="" />
               </div>
-              <div>
-                <p class="SunsetTimeCal">6:00 PM</p>
-                <p>Sunset</p>
+              <div class="sunriseSunsetTime">
+                <p class="SunsetTimeCal"></p>
+                <img src="assets/img/sunset.png" alt="" />
               </div>
             </div>
           </div>

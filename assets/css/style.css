@@ -2,14 +2,19 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
 body {
   font-family: "Playfair Display", serif;
   background-color: rgb(37, 34, 34);
+  background-image: url("/assets/img/bg-cards.jpg");
+  /* background-color: #a6d7f4; */
+  object-fit: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .container {
-  border: 1px solid green;
+  /* border: 1px solid green; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,21 +24,29 @@ body {
 }
 .container .heading {
   color: white;
-  font-size: 40px;
-  line-height: 44px;
+  font-size: 32px;
+  line-height: 36px;
+  z-index: 99999;
 }
 .weather__card {
-  display: flex;
+  background-color: #fff;
+  display: none;
   flex-direction: column;
   text-align: center;
-  background-color: #a6d7f4;
   padding: 20px 15px;
+  width: 300px;
   color: white;
   border-radius: 20px;
   gap: 15px;
+  background-image: url("/assets/img/bg-cards.jpg");
+  background-position: center;
+  background-size: cover;
+  object-fit: cover;
+  background-repeat: no-repeat;
 }
 .search {
   display: flex;
+  /* justify-content: space-between; */
   gap: 5px;
 }
 
@@ -61,8 +74,7 @@ body {
 }
 
 .weather {
-  /* display: flex; */
-  display: none;
+  display: flex;
   flex-direction: column;
   gap: 25px;
 }
@@ -77,17 +89,18 @@ body {
   font-weight: 500;
 }
 .weather img {
-  height: 120px;
+  height: 150px;
   width: 170px;
 }
 
 .details {
   display: flex;
   justify-content: space-between;
+  /* gap: 20px; */
 }
 .col {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 15px;
@@ -96,17 +109,64 @@ body {
   font-weight: 400;
 }
 .col i {
-  font-size: 40px;
+  font-size: 20px;
   color: white;
 }
 .sunRise__Sunset {
   display: flex;
   justify-content: space-between;
+  /* width: 300px; */
+}
+.timeShower {
+  display: none;
+  color: white;
+  font-size: 22px;
+  line-height: 26px;
+  z-index: 99999;
+}
+
+.showTemperature,
+.weatherCity {
+  color: white !important;
+  text-align: center;
+  font-size: 25px;
+  line-height: 28px;
+  font-weight: 600;
+}
+.showTemperature {
+  font-size: 40px;
+  text-align: left;
+  font-weight: 500;
+}
+.temp__feels-like {
+  display: flex;
+  justify-content: space-between;
+}
+.feelsLike__details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 22px;
+  line-height: 26px;
+}
+.humidity--text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.sunriseSunsetTime img {
+  height: 100px;
+  width: 100px;
+}
+.sunriseSunsetTime {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
   font-size: 20px;
   line-height: 24px;
   font-weight: 400;
 }
-
 /* .weather {
   display: none;
 } */
