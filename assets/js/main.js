@@ -1,5 +1,11 @@
+const validate = (searchPlace) => {
+  let inputRegex = /^[A-Za-z\s]+$/;
+  return inputRegex.test(searchPlace);
+};
+
 async function showWeather(event) {
-  const searchPlace = document.getElementById("searchPlace").value;
+  const searchPlace = document.getElementById("searchPlace").value.trim();
+  console.log(validate(searchPlace));
   const temperature = document.querySelector(".showTemperature");
   const feelsLike = document.querySelector(".feelsLike");
   let cityName = document.querySelector(".weatherCity");
@@ -9,8 +15,13 @@ async function showWeather(event) {
   const SunsetTimeCal = document.querySelector(".SunsetTimeCal");
   const timeShower = document.querySelector(".timeShower");
   event.preventDefault();
-  if (searchPlace === "") {
-    alert("Search Place cannot be empty");
+
+  if (!validate(searchPlace) || searchPlace === "") {
+    alert(
+      "Search Place should be in characters and spaces only, and cannot be empty or in numbers."
+    );
+    document.getElementById("searchPlace").value = " ";
+    return;
   } else {
     const url = `https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=${searchPlace}`;
     const options = {
@@ -20,10 +31,12 @@ async function showWeather(event) {
         "X-RapidAPI-Host": "weather-by-api-ninjas.p.rapidapi.com",
       },
     };
+
     try {
       const response = await fetch(url, options);
       const result = await response.json();
       console.log(result);
+
       if (
         result.temp !== undefined &&
         result.humidity !== undefined &&
@@ -45,11 +58,6 @@ async function showWeather(event) {
         let currentTimeConversion = currentTime.toLocaleTimeString([], {
           timeStyle: "short",
         });
-        // console.log(currentTimeConversion);
-
-        // var dateWithoutSecond = new Date();
-        // dateWithoutSecond.toLocaleTimeString;
-
         temperature.textContent = result.temp + " °C";
         timeShower.textContent = currentTimeConversion;
         feelsLike.textContent = result.feels_like + " °C";
@@ -58,10 +66,10 @@ async function showWeather(event) {
         SunRiseTimeCal.textContent = sunriseTime;
         SunsetTimeCal.textContent = sunsetTime;
         cityName.textContent = searchPlace;
-        console.log(result.city);
 
         document.querySelector(".weather__card").style.display = "flex";
         timeShower.style.display = "block";
+        document.getElementById("searchPlace").value = " ";
       } else {
         alert("City does not exist");
       }
@@ -70,44 +78,3 @@ async function showWeather(event) {
     }
   }
 }
-// const tempeature = document.querySelector(".showTemp");
-
-// console.log(sunriseTime);
-
-// const sunriseSunset = document.querySelector("sunRise__Sunset");
-// console.log(result.temp);
-// console.log("The sunset time is", sunsetTime);
-
-// getWeather();
-
-// searchBtn.addEventListener("click", () => {
-//   getWeather();
-// });
-
-// const showWeather = (e) => {
-
-// };
-
-// let h1 = document.createElement("h1");
-// let p = document.createElement("p");
-// let sunrise = document.createElement("span");
-// let sunset = document.createElement("span");
-// h1.textContent = result.temp + " °C";
-// p.textContent = result.humidity;
-// sunrise.textContent = sunriseTime;
-// sunset.textContent = sunsetTime;
-// tempeature.appendChild(h1);
-// tempeature.appendChild(p);
-// tempeature.appendChild(sunrise);
-// tempeature.appendChild(sunset);
-// const searchBtn = document.querySelector(".btn");
-// console.log(searchBtn);
-// console.log("The place is", searchPlace);
-
-// let sun = document.createElement("li");
-// sun.textContent = sunriseTime;
-// console.log(sun);
-// sunriseSunset.appendChild("sun");
-// sunriseSunset.appendChild("sunSet");
-
-// tempeature.appendChild(time);
